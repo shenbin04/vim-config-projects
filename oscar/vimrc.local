@@ -1,0 +1,4 @@
+let g:stash_url='https://stash.hioscar.com/projects/OSCAR/repos/data/browse/'
+let g:diffusion_url='https://phabricator.hioscar.com/diffusion/D/browse/master/'
+
+nnoremap <silent> <Leader>rpg :call oscar#util#GenAll()<CR>
