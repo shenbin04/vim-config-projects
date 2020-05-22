@@ -33,7 +33,7 @@ endfunction
 
 function! oscar#python#GenThrift()
   call util#Topen()
-  execute ':T ./pants gen-thrift-py thrift/src::'
+  execute ':T rm -rf thrift/gen && ./pants gen-thrift-py thrift/src:_all && ag "pkg_resources" -G __init__.py thrift/gen -U -l | xargs sed -i "" /declare_namespace/d'
 endfunction
 
 function! oscar#python#GenProtobuf()
