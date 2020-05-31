@@ -1,0 +1,15 @@
+snippet ntf "New react component test with factory" b
+// @flow
+import {factoryShallow} from '`!v getcwd() =~ 'mobile$' ? 'js/test/utils' : 'javascript/oscar-test-utils/factory'`';
+
+import {${1:`!v util#GetBaseFileName()`}} from './`!v util#GetBaseFileName()`';
+
+const defaultProps = {$2};
+
+describe('$1', () => {
+  it('renders', () => {
+    const {component} = factoryShallow($1, defaultProps);
+    expect(component).toMatchSnapshot();
+  });
+});
+endsnippet
