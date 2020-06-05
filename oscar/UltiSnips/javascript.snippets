@@ -1,4 +1,4 @@
-snippet ntf "New react component test with factory" b
+snippet ntf "new react component test with factory" b
 // @flow
 import {factoryShallow} from '`!v getcwd() =~ 'mobile$' ? 'js/test/utils' : 'javascript/oscar-test-utils/factory'`';
 
@@ -8,8 +8,22 @@ const defaultProps = {$2};
 
 describe('$1', () => {
   it('renders', () => {
-    const {component} = factoryShallow($1, defaultProps);
-    expect(component).toMatchSnapshot();
+    const {${3:component}} = factoryShallow($1, defaultProps);
+    expect($3).toMatchSnapshot();
   });
 });
+endsnippet
+
+snippet fs "factory shallow render"
+const {${1:component}} = factoryShallow(${2:`!v util#GetBaseFileName()`}, defaultProps, {$3});
+${4:`!p snip.rv = 'expect(' + t[1] + ').toMatchSnapshot();'`}
+endsnippet
+
+snippet fm "factory mount render"
+const {${1:component}} = factoryMount(${2:`!v util#GetBaseFileName()`}, defaultProps, {$3});
+endsnippet
+
+snippet ns "new scss import"
+import css from '${1:`!v './' . util#GetBaseFileName() . '.scss'`}';
+
 endsnippet
