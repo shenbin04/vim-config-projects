@@ -1,8 +1,3 @@
-function! oscar#python#OpenBuildFile()
-  let file = findfile('BUILD', '.;')
-  call util#TryOpenFile(file)
-endfunction
-
 function! oscar#python#MakePants()
   let pattern = expand('%:h') . ':' . expand('%:t:r')
   call util#Topen()
